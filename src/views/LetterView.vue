@@ -16,7 +16,6 @@ function playAudio() {
 }
 
 function caeateInterval(tick: any) {
-  console.log(tick)
   clearInterval(set_inter_val)
   set_inter_val = setInterval(loopfun, tick)
 }
@@ -141,11 +140,11 @@ caeateInterval(240)
 </script>
 
 <template>
-  <div>
+  <div class="letter-contanier">
     <div class="bg"></div>
-
     <div class="box">
       <div v-html="text_html"></div>
+
       <audio id="video1" width="100px" height="100px" :src="letterMp3">
         您的浏览器不支持 audio 标签。
       </audio>
@@ -153,39 +152,70 @@ caeateInterval(240)
   </div>
 </template>
 
-<style>
-.bg {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('https://img.violet-evergarden.net/lunbo_img/425.jpg');
-  background-position-y: -100px;
-  position: absolute;
-  top: 0px;
-  z-index: 1;
+<style scoped lang="scss">
+@media screen and (min-width: 600px) {
+  .bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://img.violet-evergarden.net/lunbo_img/425.jpg');
+    background-position-y: -100px;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+  }
+  .box {
+    color: #333;
+    font-family: 宋体;
+    position: relative;
+    padding: 60px 50px 0px 50px;
+    width: 340px;
+    height: 600px;
+    z-index: 2;
+    margin-left: 19vw;
+    margin-top: 2vh;
+    opacity: 95%;
+    font-size: 16px;
+    font-weight: 500;
+    background-image: url('@/assets/images/paper.jpg');
+    background-size: contain;
+    border-radius: 4px;
+  }
 }
 
-@font-face {
-  font-family: myFirstFont;
-  src: url(sansation_light.woff);
-}
+@media screen and (max-width: 600px) {
+  .bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://img.violet-evergarden.net/lunbo_img/425.jpg');
+    background-position-y: -100px;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+  }
 
-.box {
-  color: #333;
-  font-family: 宋体;
-  position: relative;
-  padding: 60px 50px 0px 50px;
-  width: 340px;
-  height: 600px;
-  z-index: 2;
-  margin-left: 19vw;
-  margin-top: 2vh;
-  background-color: aqua;
-  opacity: 95%;
-  font-size: 16px;
-  font-weight: 500;
-  background-image: url('@/assets/images/paper.jpg');
-  background-size: contain;
-  border-radius: 4px;
+  .letter-contanier {
+    // position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    .box {
+      font-family: 宋体;
+      position: relative;
+      padding: 60px 50px 0px 50px;
+      width: 65vw;
+      height: 121vw;
+      z-index: 2;
+      margin-top: 100px;
+      opacity: 95%;
+      font-size: 16px;
+      font-weight: 500;
+      background-image: url('@/assets/images/paper.jpg');
+      background-size: contain;
+      border-radius: 4px;
+    }
+  }
 }
 </style>

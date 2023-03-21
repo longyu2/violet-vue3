@@ -57,33 +57,67 @@ let items = {
 </template>
 
 <style scoped>
-.books-box {
-  min-height: 85vh;
-  display: flex;
-  justify-content: flex-start;
-}
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+@media screen and (min-width: 600px) {
+  .books-box {
+    min-height: 85vh;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.text {
-  font-size: 14px;
-}
+  .text {
+    font-size: 14px;
+  }
 
-.item {
-  margin-bottom: 18px;
-}
+  .item {
+    margin-bottom: 18px;
+  }
 
-.box-card {
-  margin-left: 70px;
-  width: 480px;
-  height: auto;
-}
+  .box-card {
+    margin-left: 70px;
+    width: 480px;
+    height: auto;
+  }
 
-a {
-  color: black;
-  text-decoration: none;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .books-box {
+    flex-direction: column;
+    min-height: 85vh;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  .item {
+    margin-bottom: 18px;
+  }
+
+  .box-card {
+    margin-top: 70px;
+    width: 480px;
+    height: auto;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
 }
 </style>

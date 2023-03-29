@@ -142,7 +142,7 @@ caeateInterval(240)
 <template>
   <div class="letter-contanier">
     <div class="bg"></div>
-    <div class="box">
+    <div class="box  animate__animated animate__slideInDown">
       <div v-html="text_html"></div>
 
       <audio id="video1" width="100px" height="100px" :src="letterMp3">
@@ -166,7 +166,7 @@ caeateInterval(240)
   }
   .box {
     color: #333;
-    font-family: 宋体;
+    font-family: 楷体;
     position: relative;
     padding: 60px 50px 0px 50px;
     width: 340px;
@@ -175,7 +175,7 @@ caeateInterval(240)
     margin-left: 19vw;
     margin-top: 2vh;
     opacity: 95%;
-    font-size: 16px;
+    font-size: 25px;
     font-weight: 500;
     background-image: url('@/assets/images/paper.jpg');
     background-size: contain;

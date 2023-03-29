@@ -3,7 +3,7 @@ import imghubjson from '@/assets/images/imghub/imghub.json'
 
 let imgurl_head = 'https://jp.violet-evergarden.net/imghub'
 
-let imgUrlList: String[] = []
+let imgUrlList:any = []
 
 imghubjson.forEach((element) => {
   imgUrlList.push(`${imgurl_head}/${element}`)
@@ -12,7 +12,7 @@ imghubjson.forEach((element) => {
 <template>
   <div class="imgboard-contanier">
     <div class="imgboard-box">
-      <el-image class="el-img" v-for="(item, index) in imgUrlList" :key="index" :src="item" />
+      <img class="el-img  animate__animated animate__zoomIn" v-for="(item, index) in imgUrlList" :key="index" :src="item" />
     </div>
   </div>
 </template>

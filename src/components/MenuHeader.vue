@@ -15,8 +15,8 @@
 
     <el-menu-item index="/imgboard">图片墙</el-menu-item>
     <el-menu-item index="/letter">给少校的信</el-menu-item>
-    <el-menu-item index="/books">小说</el-menu-item>
-    <el-menu-item index=""><a href="EatViolet/index.html">别踩薇块</a></el-menu-item>
+    <el-menu-item index="/books">原著</el-menu-item>
+    <el-menu-item index=""><a href="EatViolet/index.html">小游戏</a></el-menu-item>
   </el-menu>
 </template>
 

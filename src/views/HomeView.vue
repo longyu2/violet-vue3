@@ -17,16 +17,24 @@ const handleSelect = (key: string, keyPath: string[]) => {
     </video>
 
     <div class="main-content-box">
-      <h2>hi!欢迎来到这里！</h2>
-      <p>这是一个紫罗兰永恒花园的爱好者所建立的网站。</p>
-      <p>旨在为一切喜爱紫罗兰的人们提供一个休憩的场所。</p>
 
-      <p>在这里，你可以:</p>
+      <h3 class="animate__animated animate__fadeInDown">花纵有凋零之日</h3>
+      <h3 class="animate__animated animate__fadeInDown animate__delay-1s">意却无消散之时</h3>
+      <h3 class="animate__animated animate__fadeInDown animate__delay-2s">美与爱亘古不变</h3>
 
-      <p>欣赏美丽的图片</p>
-      <p>游玩小游戏</p>
+      <h3 class="animate__animated animate__fadeInDown animate__delay-3s">紫罗兰于世长存</h3>
 
-      <p>阅读原著文章</p>
+      <br>
+      <h3 class="animate__animated animate__fadeInDown animate__delay-4s" >hi!欢迎来到这里！</h3>
+      <p class="animate__animated animate__fadeInDown animate__delay-4s">这是一个紫罗兰永恒花园的爱好者所建立的网站。</p>
+      <p class="animate__animated animate__fadeInDown animate__delay-4s">旨在为一切喜爱紫罗兰的人们提供一个休憩的场所。</p>
+
+      <p class="animate__animated animate__fadeInDown animate__delay-4s">在这里，你可以:</p>
+
+      <p class="animate__animated animate__fadeInDown animate__delay-4s">欣赏美丽的图片</p>
+      <p class="animate__animated animate__fadeInDown animate__delay-4s">游玩小游戏</p>
+
+      <p class="animate__animated animate__fadeInDown animate__delay-4s">阅读原著文章</p>
     </div>
   </div>
 </template>

@@ -30,14 +30,14 @@ import MenuHeader from '@/components/MenuHeader.vue'
   background-color: #000000;
 }
 @media screen and (min-width: 600px) {
+  .el-main {
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .common-layout {
     height: auto;
-    .el-main {
-      min-height: 100vh;
-    }
   }
 }
 </style>

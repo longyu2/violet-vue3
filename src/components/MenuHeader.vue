@@ -30,8 +30,8 @@ a {
 
 @media screen and (max-width: 600px) {
   .el-menu-header {
+    z-index: 100;
     padding-right: 20px;
-    z-index: 2;
     width: 100vw;
     height: 40px;
     position: fixed;
@@ -47,8 +47,9 @@ a {
 
 @media screen and (min-width: 600px) {
   .el-menu-header {
+    z-index: 100;
+
     padding-right: 20px;
-    z-index: 2;
     width: 100vw;
     height: 40px;
     position: fixed;

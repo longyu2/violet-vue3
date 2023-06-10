@@ -15,6 +15,13 @@ export default defineConfig({
         username:'root',//服务器ssh登录用户名
         password:'20010506longyuL.',//服务器ssh登录密码
         serverpath:'/home/ubuntu/www/website/violet',//服务器web目录 
+      },
+      "jp":{
+        host:'jp.violet-evergarden.net',//服务器IP
+        port:22,//服务器端口
+        username:'root',//服务器ssh登录用户名
+        password:'tuFXOX7eab8g',//服务器ssh登录密码
+        serverpath:'/root/www/website/violet',//服务器web目录 
       }
     }),
   ],

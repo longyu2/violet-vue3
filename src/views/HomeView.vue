@@ -1,40 +1,91 @@
 <script setup lang="ts">
-import img_910 from '@/assets/images/910.jpg'
 import { ref } from 'vue'
+import FooterComponent from '@/components/FooterComponent.vue'
+import imghubjson from '@/assets/lunbo_img.json'
 
-const activeIndex = ref('1')
-const handleSelect = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
+let imgurl_head = 'https://img.violet-evergarden.net/lunbo_img'
+
+let imgUrlList: any = []
+
+imghubjson.forEach((element) => {
+  imgUrlList.push(`${imgurl_head}/${element}`)
+})
 </script>
 
 <template>
   <div class="main-box">
-    <!-- <el-image class="main-img" :src="img_910"> </el-image> -->
+    <!-- <video id="v1" class="bgvideo" autoplay loop muted>
+      <source src="@/assets/violetbg.mp4" type="video/mp4" />
+    </video> -->
 
     <video id="v1" class="bgvideo" autoplay loop muted>
-      <source src="@/assets/violetbg.mp4" type="video/mp4" />
+      <source src="@/assets/薇尔莉特跳水.mp4" type="video/mp4" />
     </video>
 
-    <div class="main-content-box">
+    <div class="main-content">
+      <div class="carousel">
+        <el-carousel :interval="5000" height="50vh" arrow="always">
+          <el-carousel-item v-for="item in imgUrlList" :key="item">
+            <el-image class="carousel-img" :src="item"></el-image>
+          </el-carousel-item>
+        </el-carousel>
+      </div>
 
-      <h3 class="animate__animated animate__fadeInDown">花纵有凋零之日</h3>
-      <h3 class="animate__animated animate__fadeInDown animate__delay-1s">意却无消散之时</h3>
-      <h3 class="animate__animated animate__fadeInDown animate__delay-2s">美与爱亘古不变</h3>
+      <div class="text">
+        <div class="text-left">
+          <h3 class="animate__animated animate__fadeInDown">花纵有凋零之日</h3>
+          <h3 class="animate__animated animate__fadeInDown animate__delay-1s">意却无消散之时</h3>
+          <h3 class="animate__animated animate__fadeInDown animate__delay-2s">美与爱亘古不变</h3>
 
-      <h3 class="animate__animated animate__fadeInDown animate__delay-3s">紫罗兰于世长存</h3>
+          <h3 class="animate__animated animate__fadeInDown animate__delay-3s">紫罗兰于世长存</h3>
 
-      <br>
-      <h3 class="animate__animated animate__fadeInDown animate__delay-4s" >hi!欢迎来到这里！</h3>
-      <p class="animate__animated animate__fadeInDown animate__delay-4s">这是一个紫罗兰永恒花园的爱好者所建立的网站。</p>
-      <p class="animate__animated animate__fadeInDown animate__delay-4s">旨在为一切喜爱紫罗兰的人们提供一个休憩的场所。</p>
+          <br />
+          <h3 class="animate__animated animate__fadeInDown animate__delay-4s">hi!欢迎来到这里！</h3>
+          <p class="animate__animated animate__fadeInDown animate__delay-4s">
+            这是一个紫罗兰永恒花园的爱好者所建立的网站。
+          </p>
+          <p class="animate__animated animate__fadeInDown animate__delay-4s">
+            希望能为喜欢紫罗兰的人们提供一个休憩的场所。
+          </p>
 
-      <p class="animate__animated animate__fadeInDown animate__delay-4s">在这里，你可以:</p>
+          <p class="animate__animated animate__fadeInDown animate__delay-4s">这个网站的主要功能有:</p>
+          <p class="animate__animated animate__fadeInDown animate__delay-4s">欣赏美丽的薇尔莉特图片</p>
+          <p class="animate__animated animate__fadeInDown animate__delay-4s">游玩小游戏</p>
+          <p class="animate__animated animate__fadeInDown animate__delay-4s">查看原著资源</p>
+          <br/>
+          <p>薇尔莉特给我们带来了许多美好</p>
+          <p>所以，我也想让她的美更多地流传</p>
+          <p>这就是这个网站诞生的初衷了</p>
+        
+        </div>
 
-      <p class="animate__animated animate__fadeInDown animate__delay-4s">欣赏美丽的图片</p>
-      <p class="animate__animated animate__fadeInDown animate__delay-4s">游玩小游戏</p>
+        <div class="text-right">
+          <img
+            src="https://img.moegirl.org.cn/common/thumb/2/2a/Violet_Evergarden_Ever_After.png/280px-Violet_Evergarden_Ever_After.png"
+            width="100%"
+            alt=""
+          />
+          <img
+            width="100%"
+            src="https://img.moegirl.org.cn/common/thumb/a/ad/Violet_Evergarden_Movie_KV.jpg/800px-Violet_Evergarden_Movie_KV.jpg"
+            alt=""
+          />
+        </div>
+      </div>
 
-      <p class="animate__animated animate__fadeInDown animate__delay-4s">阅读原著文章</p>
+      <div class="text2">
+        <!-- <p></p>
+        <p>sds</p>
+        <p>sds</p>
+        <p>sds</p>
+        <p>sds</p>
+        <p>sds</p>
+        <p>sds</p>
+        <p>sds</p>
+        <p>sds</p> -->
+      </div>
+
+      <FooterComponent></FooterComponent>
     </div>
   </div>
 </template>
@@ -46,30 +97,79 @@ const handleSelect = (key: string, keyPath: string[]) => {
 
 @media screen and (min-width: 600px) {
   .main-box {
-    position: relative;
+    // background-image: url(https://img.violet-evergarden.net/lunbo_img/1013.jpg);
+    // background-attachment: fixed;
+    top: 0%;
     z-index: 1;
     padding: 0%;
     width: 100%;
+    height: 400vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    .bg {
+    .bgvideo {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
       z-index: 1;
+      object-fit: cover;
     }
+
     .main-img {
       margin: auto;
       height: 100vh;
     }
-    .main-content-box {
+    .main-content {
       position: absolute;
-      top: 20px;
-      left: 700px;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       z-index: 2;
-      width: 70vw;
-      margin-top: 10vh;
+      width: 100vw;
       height: 90vh;
       color: aliceblue;
+
+      .carousel {
+        opacity: 90%;
+        width: 70vw;
+        height: 100vh;
+        .carousel-img {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .text {
+        margin-top: 100px;
+        width: 70vw;
+        height: 1000px;
+        display: flex;
+        justify-content: space-between;
+        .text-left {
+          color: #000;
+          padding: 5%;
+          width: 63%;
+          border-radius: 10px;
+          background-color: rgba($color: #fff, $alpha: 0.55);
+        }
+        .text-right {
+          height: 80%;
+          display: flex;
+          flex-flow: column;
+          justify-content: space-between;
+          width: 20%;
+          background-color: rgba($color: #000000, $alpha: 0.7);
+        }
+      }
+      .text2 {
+        color: #000;
+        margin-top: 100px;
+        width: 70vw;
+        height: 200px;
+        background-color: rgba($color: #fff, $alpha: 0.55);
+      }
     }
   }
 }
